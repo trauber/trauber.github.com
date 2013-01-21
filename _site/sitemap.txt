@@ -6,5 +6,4 @@ http://trauber.github.com/pages.html
 http://trauber.github.com/sitemap.txt
 http://trauber.github.com/archive.html
 http://trauber.github.com/atom.xml
-
-http://trauber.github.com/lessons/2011/12/29/jekyll-introduction
+http://trauber.github.com/index.md.org

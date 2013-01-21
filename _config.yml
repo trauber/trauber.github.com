@@ -13,7 +13,7 @@ title : TeXnicalities
 tagline: notes on TeX, LaTeX, ConTeXt
 author :
   name : Rich Traube
-  email : rich.traube@gmail.com
+  email : &#114;&#105;&#099;&#104;&#046;&#116;&#114;&#097;&#117;&#098;&#101;&#064;&#103;&#109;&#097;&#105;&#108;&#046;&#099;&#111;&#109;
   github : trauber
   #twitter : username
   #feedburner : feedname
@@ -82,15 +82,6 @@ JB :
     provider : disqus
     disqus :
       short_name : jekyllbootstrap
-    livefyre :
-      site_id : 123
-    intensedebate :
-      account : 123abc
-    facebook :
-      appid : 123
-      num_posts: 5
-      width: 580
-      colorscheme: light
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
@@ -100,10 +91,6 @@ JB :
     provider : google 
     google : 
         tracking_id : 'UA-123-12'
-    getclicky :
-      site_id : 
-    mixpanel :
-        token : '_MIXPANEL_TOKEN_'
 
   # Settings for sharing helper. 
   # Sharing is for things like tweet, plusone, like, reddit buttons etc.
