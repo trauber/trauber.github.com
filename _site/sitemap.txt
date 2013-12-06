@@ -1,9 +1,0 @@
-
-http://trauber.github.com/index.html
-http://trauber.github.com/tags.html
-http://trauber.github.com/categories.html
-http://trauber.github.com/pages.html
-http://trauber.github.com/sitemap.txt
-http://trauber.github.com/archive.html
-http://trauber.github.com/atom.xml
-http://trauber.github.com/index.md.org
