@@ -1,0 +1,5 @@
+	.container { padding-top: 40px; }
+        #menu a { color: #c0c0c0; text-decoration: none; }
+        #menu li span.current a { color: #000000; }
+        #menu a:hover { border-bottom: dotted thin #000000; border-top: dotted thin #000000 }
+
