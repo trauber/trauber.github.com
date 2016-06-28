@@ -1,0 +1,25 @@
+Title: Sadie's Cookbook
+Slug: sadies-cookbook
+Author: Rich
+Date: 2016-06-11 17:41:16
+
+I have been using dropbox to host "Sadie's Cookbook," a collection of
+recipes from Sadie Schoss's recipe card box using JSON for storage.
+
+<!--more-->
+
+It orginally had one static file for each recipe. Every time a new
+recipe was called it would take more or less of a long time for the
+HTML to load, depending on the connection. I eventually came around to
+the idea of loading the data from one javascript file. I found a good
+javascript router to use and I chose what I consider the best of the
+javascript markdown converters.
+
+The results are posted on github at [http://github.com/trauber/sadies-cookbook](http://github.com/trauber/sadies-cookbook) .
+
+## TODO
+
+Right now the recipes are in an array, meaning insertion or deletionb of a recipe will break any bookmarked routes. I need to key each recipe on its slug and use the slug for creating the routes.
+
+
+

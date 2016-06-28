@@ -1,0 +1,13 @@
+Title: Some Project Ideas
+Slug: some-project-ideas
+Date: 2013-12-17 09:00:00
+Author: Rich
+
+
+* calendar using LaTex's tigz package that is superimposed on a page size image.
+    * includegraphics
+    * minipage
+    * overpic
+    * tigz
+* yaml bootstrap menu generator using shyaml
+ 

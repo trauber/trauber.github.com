@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>LaTeX Calendars - Rich's Musings</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet"/>
+<link href="css/assets.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" type="text/css"/>
+<link href="https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" rel="stylesheet" type="text/css"/>
+<link href="feed.xml" rel="alternate" type="application/rss+xml" title="Blog" />
+<style>
+body {
+    font-family: Open Sans;
+    background-color: #f3f3f3;
+}
+h1, h2, h3, h4 {
+    font-family: Yanone Kaffeesatz;
+}
+.container {
+    max-width: 780px;
+}
+.footer {
+    margin-top: 50px;
+    font-size: 11px;
+    text-align: center;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="hero-unit faq">
+        <div class="ac" style="text-align: center;">
+            <h1>Rich's Musings</h1>
+            <a href="index.html">Home</a> &bull; <a href="about.html">About</a>  &bull; <a href="feed.xml">Feed</a>
+        </div>
+    </div>
+    
+<div class="hero-unit faq">
+    <div class="ac">
+        <h2>LaTeX Calendars</h2>
+    </div>
+</div>
+
+<div>
+    <p>The style of calendar I like has a page size image
+with text of a vertical calendar superimposed on it.
+Here's a sample of the calendar text, output from <code>ncal -h</code>.</p>
+<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%">    January 2014      
+Su     5 12 19 26   
+Mo     6 13 20 27   
+Tu     7 14 21 28   
+We  1  8 15 22 29   
+Th  2  9 16 23 30   
+Fr  3 10 17 24 31   
+Sa  4 11 18 25      
+</pre></div>
+
+<p>For an image I'm using  <a href="images/balou.jpg">this photo of my dog Balou in a Chicago
+snowstorm</a>,</p>
+<h2>Calendar Text</h2>
+<p>For superimposing the calendar text I found two approaches.  The
+first is to use <code>ncal -h</code> output and use a <code>\verbatim</code>
+environment.  This turned out to be a little too fragile; it
+works for some fonts but not for many others.  I found <a href="http://tex.stackexchange.com/questions/39813/vertical-week-list-in-tikz-calendar/39816#39816">code at
+tex.stackexchange</a>
+that uses the <code>tikz</code> package's calendar library.  It has handled every font
+I've  used with it.</p>
+<p>As, provided, the <code>tikz</code> code produces <a href="tikz-calendar.pdf">this small calendar</a>.</p>
+<h2>Enlarge Font with <code>mathptmx</code></h2>
+<p>One of my favorite LaTeX packages is <code>mathptmx</code> .  I haven't used LaTeX
+for math or science, but I have used it for work reports and for personal
+projects and I've always been interested in making custom title pages
+with fonts of various sizes.  <code>mathptmx</code> enables use of extremely large fonts.
+Adding this package to the preamble and applying the <code>\fontsize</code> and <code>\selectfont</code> commands yields 
+the <a href="tikz-calendar-40pt.pdf">same calendar in point 40 font</a>.</p>
+<h2>Combining Calendar Text and Page Size Image</h2>
+<p>I found two approaches for combining calendar and image.  One is to
+use the LaTeX <code>wallpaper</code> package and to write the calendar over it.
+While this works it enforces lots of LaTeX's built-in heuristics for
+placing the calendar text.  Another approach proved more flexible.
+The <code>overpic</code> package's <code>\put</code> command allows placing text over a picture
+with coordinates.</p>
+<p>The following code produces <a href="cal.pdf">this calendar</a>.</p>
+<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">\documentclass</span><span style="color: #008000">{</span>article<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>mathptmx<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #7D9029">[landscape,margin=.5cm]</span><span style="color: #008000">{</span>geometry<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>graphicx<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>overpic<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>xcolor<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>tikz<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\usetikzlibrary</span><span style="color: #008000">{</span>calendar<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\makeatletter</span>
+<span style="color: #008000; font-weight: bold">\tikzstyle</span><span style="color: #008000">{</span>week list<span style="color: #008000">}</span>=[<span style="color: #408080; font-style: italic">%</span>
+  execute before day scope=<span style="color: #008000">{</span><span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000; font-weight: bold">\ifdate</span><span style="color: #008000">{</span>day of month=1<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\ifdate</span><span style="color: #008000">{</span>equals=<span style="color: #008000; font-weight: bold">\pgfcalendarbeginiso</span><span style="color: #008000">}{}</span>
+      <span style="color: #008000">{</span><span style="color: #408080; font-style: italic">%</span>
+        <span style="color: #408080; font-style: italic">% On first of month, except when first date in calendar.</span>
+        <span style="color: #008000; font-weight: bold">\pgfmathsetlength</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\pgf</span>@x<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\tikz</span>@lib@cal@month@xshift<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+        <span style="color: #008000; font-weight: bold">\pgftransformxshift</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\pgf</span>@x<span style="color: #008000">}</span>
+      <span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000">}{}</span><span style="color: #408080; font-style: italic">%</span>
+  <span style="color: #008000">}</span>, 
+  execute at begin day scope=<span style="color: #008000">{</span><span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000; font-weight: bold">\pgfmathsetlength\pgf</span>@y<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\tikz</span>@lib@cal@yshift<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000; font-weight: bold">\pgf</span>@y=<span style="color: #008000; font-weight: bold">\pgfcalendarcurrentweekday\pgf</span>@y<span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000; font-weight: bold">\pgftransformyshift</span><span style="color: #008000">{</span>-<span style="color: #008000; font-weight: bold">\pgf</span>@y<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+  <span style="color: #008000">}</span>,
+  execute after day scope=<span style="color: #008000">{</span><span style="color: #408080; font-style: italic">%</span>
+    <span style="color: #008000; font-weight: bold">\ifdate</span><span style="color: #008000">{</span>Sunday<span style="color: #008000">}{</span><span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000; font-weight: bold">\pgfmathsetlength</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\pgf</span>@x<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\tikz</span>@lib@cal@xshift<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000; font-weight: bold">\pgftransformxshift</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\pgf</span>@x<span style="color: #008000">}</span>
+    <span style="color: #008000">}{}</span><span style="color: #408080; font-style: italic">%</span>
+  <span style="color: #008000">}</span>
+]
+
+<span style="color: #008000; font-weight: bold">\tikzoption</span><span style="color: #008000">{</span>day headings<span style="color: #008000">}{</span><span style="color: #008000; font-weight: bold">\tikzstyle</span><span style="color: #008000">{</span>day heading<span style="color: #008000">}</span>=[#1]<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\tikzstyle</span><span style="color: #008000">{</span>day heading<span style="color: #008000">}</span>=[]
+<span style="color: #008000; font-weight: bold">\tikzstyle</span><span style="color: #008000">{</span>day letter headings<span style="color: #008000">}</span>=[
+    execute before day scope=<span style="color: #008000">{</span> <span style="color: #008000; font-weight: bold">\ifdate</span><span style="color: #008000">{</span>day of month=1<span style="color: #008000">}{</span><span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000; font-weight: bold">\pgfmathsetlength\pgf</span>@ya<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\tikz</span>@lib@cal@yshift<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000; font-weight: bold">\pgfmathsetlength\pgf</span>@xa<span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\tikz</span>@lib@cal@xshift<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000; font-weight: bold">\pgftransformxshift</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\pgf</span>@xa<span style="color: #008000">}</span>
+      <span style="color: #008000; font-weight: bold">\foreach</span> <span style="color: #008000; font-weight: bold">\d</span>/<span style="color: #008000; font-weight: bold">\l</span> in <span style="color: #008000">{</span>0/M,1/T,2/W,3/T,4/F,5/S,6/S<span style="color: #008000">}</span> <span style="color: #008000">{</span>
+        <span style="color: #008000; font-weight: bold">\pgf</span>@ya=<span style="color: #008000; font-weight: bold">\d\pgf</span>@ya<span style="color: #408080; font-style: italic">%</span>
+        <span style="color: #008000; font-weight: bold">\pgftransformxshift</span><span style="color: #008000">{</span>-<span style="color: #008000; font-weight: bold">\pgf</span>@xa<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+        <span style="color: #008000; font-weight: bold">\pgftransformyshift</span><span style="color: #008000">{</span>-<span style="color: #008000; font-weight: bold">\pgf</span>@ya<span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+        <span style="color: #008000; font-weight: bold">\node</span><span style="color: #7D9029">[every day,day heading, anchor=base]</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\l</span><span style="color: #008000">}</span>;<span style="color: #408080; font-style: italic">%</span>
+      <span style="color: #008000">}</span> 
+    <span style="color: #008000">}{}</span><span style="color: #408080; font-style: italic">%</span>
+  <span style="color: #008000">}</span><span style="color: #408080; font-style: italic">%</span>
+]
+<span style="color: #008000; font-weight: bold">\makeatother</span>
+
+<span style="color: #008000; font-weight: bold">\pagestyle</span><span style="color: #008000">{</span>empty<span style="color: #008000">}</span>
+
+<span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>document<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\color</span><span style="color: #008000">{</span>white<span style="color: #008000">}</span>    
+<span style="color: #008000; font-weight: bold">\vspace*</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\fill</span><span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\fontsize</span><span style="color: #008000">{</span>40<span style="color: #008000">}{</span>50<span style="color: #008000">}</span><span style="color: #008000; font-weight: bold">\selectfont</span>
+<span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>overpic<span style="color: #008000">}</span>[scale=.2]<span style="color: #008000">{</span>images/balou.jpg<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\put</span>(-1,10)<span style="color: #008000">{</span>
+<span style="color: #008000; font-weight: bold">\begin</span><span style="color: #008000">{</span>tikzpicture<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\calendar</span>[
+    dates=2014-01-01 to 2014-01-last,
+    week list,
+    day letter headings,
+    day heading/.style=<span style="color: #008000">{</span>white, xshift=-1em<span style="color: #008000">}</span>,
+    month label above left,
+    month text=<span style="color: #008000; font-weight: bold">\%</span>mt <span style="color: #008000; font-weight: bold">\%</span>y0
+];
+<span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>tikzpicture<span style="color: #008000">}</span>
+<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>overpic<span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\vspace*</span><span style="color: #008000">{</span><span style="color: #008000; font-weight: bold">\fill</span><span style="color: #008000">}</span>
+<span style="color: #008000; font-weight: bold">\end</span><span style="color: #008000">{</span>document<span style="color: #008000">}</span>
+</pre></div>
+
+<h2>Repo</h2>
+<p>Source files are on github: <a href="https://github.com/trauber/latex-calendar">https://github.com/trauber/latex-calendar</a>
+.</p>
+    <div>
+        <p class="text-muted">published on 2014-01-16 09:00:00 by Rich</p>
+    </div>
+</div>
+
+</div>
+<div class="footer">
+    <p class="text-muted">powered by <a href="https://github.com/botherder/habu">habu</a>.</p>
+</div>
+</body>
+</html>

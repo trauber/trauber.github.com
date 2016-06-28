@@ -1,0 +1,13 @@
+Title: Livre pour toi
+Slug: livre-pour-toi
+Date: 2014-01-22 09:00:00
+Author: Rich
+
+I'm working on a typescript of [Marguerite
+Burnat--Provins](http://fr.wikipedia.org/wiki/Marguerite_Burnat-Provins)'s
+**Livre pour toi** in English translation.  It was translated by Elizabeth
+Brereton Pratt, mother to a dear friend, Mary Silverstein, sometime in
+the 1910s or 20s.
+
+I'm writing it in markdown and using pandoc to convert the markdown to
+multiple formats.

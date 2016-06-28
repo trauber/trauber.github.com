@@ -1,0 +1,25 @@
+Title: Powerpoint, Excel and the GUI Monkey
+Slug: powerpoint-excel-and-the-gui-monkey
+Date: 2014-02-18 09:00
+Author: Rich
+
+Use pipe tables, a la php markdown extra and pandoc.
+
+[code:sh]
+|item|quantity|price|
+|----|-------:|----:|
+|tent|    3   |$250 |
+[/code]
+
+
+- Convince people to use PDF and html for presentations.  Good luck!!
+- Add rows and columns to worksheets as needed for inserting pipes, hyphens and colons.
+- Create minimal formula setup.
+- Right-lower corner drag as appropriate.
+- Export sheet as plain text.
+
+`char(10)` or `code(10)` yields a newline.
+
+`dollar(x)` converts `x` to US currency to two decimal points and adds commas.
+
+
