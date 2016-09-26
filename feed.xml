@@ -4,6 +4,29 @@
     <title>Feed title</title>
     
     <entry>
+        <title>First Week of Work for Northwood Publications, Inc</title>
+        <link href="2016-07-08-first-week-of-work.html"/>
+        <content type="html"><p>I just got a project done for my new job, part time assistant with Northwood Publications, Inc. The employer is John Marco. I have had e-mail correspondence with him and maybe at some point we'll get to meet.</p>
+<p>He gave me a list of ISBNs and wanted prices for them. I got data from <a href="http://bookfinder.com">bookfinder.com</a> . I did the processing on Linux. I had to scrape HTML. The gorey details follow.</p>
+<!--more-->
+
+<h2>Bib Data (including prices)</h2>
+<p>Just did a google and found bookfinder.com . Would liked to have had access to Bowker's <em>Books in Print</em>, and e-mailed Mr. Marco about it, but that wasn't in the cards. </p>
+<p>Bookfinder's results are sorted lowest price first. Where there were multi-part result sets, I just need the overview page of data. Each page is broken down into new, used  and rental books.</p>
+<p>I used awk to parse the URLs and generate tsv files. I used 'q' to generate results.</p></content>
+    </entry>
+    
+    <entry>
+        <title>Music & Art Reunion</title>
+        <link href="2016-06-12-music-and-art-reunion.html"/>
+        <content type="html"><p>I just went to the after-party at Rowhouse. We had a blast, especially once the dancing started. </p>
+<p><img alt="Me, Darius, and Julie" src="images/me-darius-julie-at-reunion40.jpg" /></p>
+<!--more-->
+
+<p>I'm slowly reconnecting with these folks, even many I didn't connect with in high school. This is a great class I was involved with and I really should think about going to senior trip redux.</p></content>
+    </entry>
+    
+    <entry>
         <title>Sadie's Cookbook</title>
         <link href="2016-06-11-sadies-cookbook.html"/>
         <content type="html"><p>I have been using dropbox to host "Sadie's Cookbook," a collection of
