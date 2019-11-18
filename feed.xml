@@ -4,19 +4,6 @@
     <title>Feed title</title>
     
     <entry>
-        <title>First Week of Work for Northwood Publications, Inc</title>
-        <link href="2016-07-08-first-week-of-work.html"/>
-        <content type="html"><p>I just got a project done for my new job, part time assistant with Northwood Publications, Inc. The employer is John Marco. I have had e-mail correspondence with him and maybe at some point we'll get to meet.</p>
-<p>He gave me a list of ISBNs and wanted prices for them. I got data from <a href="http://bookfinder.com">bookfinder.com</a> . I did the processing on Linux. I had to scrape HTML. The gorey details follow.</p>
-<!--more-->
-
-<h2>Bib Data (including prices)</h2>
-<p>Just did a google and found bookfinder.com . Would liked to have had access to Bowker's <em>Books in Print</em>, and e-mailed Mr. Marco about it, but that wasn't in the cards. </p>
-<p>Bookfinder's results are sorted lowest price first. Where there were multi-part result sets, I just need the overview page of data. Each page is broken down into new, used  and rental books.</p>
-<p>I used awk to parse the URLs and generate tsv files. I used 'q' to generate results.</p></content>
-    </entry>
-    
-    <entry>
         <title>Music & Art Reunion</title>
         <link href="2016-06-12-music-and-art-reunion.html"/>
         <content type="html"><p>I just went to the after-party at Rowhouse. We had a blast, especially once the dancing started. </p>
@@ -48,9 +35,9 @@ javascript markdown converters.</p>
         <title>Powerpoint, Excel and the GUI Monkey</title>
         <link href="2014-02-18-powerpoint-excel-and-the-gui-monkey.html"/>
         <content type="html"><p>Use pipe tables, a la php markdown extra and pandoc.</p>
-<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%">|item|quantity|price|
+<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>|item|quantity|price|
 |----|-------:|----:|
-|tent|    3   |<span style="color: #19177C">$250</span> |
+|tent|    <span style="color: #666666">3</span>   |<span style="color: #19177C">$250</span> |
 </pre></div>
 
 <ul>
@@ -82,14 +69,14 @@ multiple formats.</p></content>
         <content type="html"><p>The style of calendar I like has a page size image
 with text of a vertical calendar superimposed on it.
 Here's a sample of the calendar text, output from <code>ncal -h</code>.</p>
-<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%">    January 2014      
-Su     5 12 19 26   
-Mo     6 13 20 27   
-Tu     7 14 21 28   
-We  1  8 15 22 29   
-Th  2  9 16 23 30   
-Fr  3 10 17 24 31   
-Sa  4 11 18 25      
+<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span>    January <span style="color: #666666">2014</span>      
+Su     <span style="color: #666666">5</span> <span style="color: #666666">12</span> <span style="color: #666666">19</span> <span style="color: #666666">26</span>   
+Mo     <span style="color: #666666">6</span> <span style="color: #666666">13</span> <span style="color: #666666">20</span> <span style="color: #666666">27</span>   
+Tu     <span style="color: #666666">7</span> <span style="color: #666666">14</span> <span style="color: #666666">21</span> <span style="color: #666666">28</span>   
+We  <span style="color: #666666">1</span>  <span style="color: #666666">8</span> <span style="color: #666666">15</span> <span style="color: #666666">22</span> <span style="color: #666666">29</span>   
+Th  <span style="color: #666666">2</span>  <span style="color: #666666">9</span> <span style="color: #666666">16</span> <span style="color: #666666">23</span> <span style="color: #666666">30</span>   
+Fr  <span style="color: #666666">3</span> <span style="color: #666666">10</span> <span style="color: #666666">17</span> <span style="color: #666666">24</span> <span style="color: #666666">31</span>   
+Sa  <span style="color: #666666">4</span> <span style="color: #666666">11</span> <span style="color: #666666">18</span> <span style="color: #666666">25</span>      
 </pre></div>
 
 <p>For an image I'm using  <a href="images/balou.jpg">this photo of my dog Balou in a Chicago
@@ -118,7 +105,7 @@ placing the calendar text.  Another approach proved more flexible.
 The <code>overpic</code> package's <code>\put</code> command allows placing text over a picture
 with coordinates.</p>
 <p>The following code produces <a href="cal.pdf">this calendar</a>.</p>
-<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%"><span style="color: #008000; font-weight: bold">\documentclass</span><span style="color: #008000">{</span>article<span style="color: #008000">}</span>
+<div class="colorful" style="background: #f8f8f8"><pre style="line-height: 125%"><span></span><span style="color: #008000; font-weight: bold">\documentclass</span><span style="color: #008000">{</span>article<span style="color: #008000">}</span>
 <span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>mathptmx<span style="color: #008000">}</span>
 <span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #7D9029">[landscape,margin=.5cm]</span><span style="color: #008000">{</span>geometry<span style="color: #008000">}</span>
 <span style="color: #008000; font-weight: bold">\usepackage</span><span style="color: #008000">{</span>graphicx<span style="color: #008000">}</span>
