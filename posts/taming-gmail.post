@@ -1,0 +1,65 @@
+Title: Uncluttering Your Gmail
+Slug: taming-gmail
+Date: 2019-12-18 20:53:00
+Issueid: 1
+Author: Rich
+
+Here are three things you can do to get control of your Gmail using out-of-the-box features, not plugins.  You can use all three, any in combination, or singly depending on your preferences and needs. The first two methods, **assigning messages to tasks** and **multiple inboxes**, focus on getting messages out of your main inbox and putting them in places where you can do further followup as quickly and efficiently as possible, on capturing and organizing. The last, **negative searching**, focuses on clarification, on distinguishing signal from overwhelming amounts of noise. 
+
+
+## Assigning Messages to Tasks
+
+Introduced in 2018, "Add to Tasks: is a great Gmail feature. Access it from the triple-dot menu item above a message.  This will add an entry to google's task manager with a link to the e-mail message  and the message's subject line as the task's title. Once assigned to a task, you want to archive the message. It's out of your main inbox and yet still readily accessible from the link in the task. Once you're done with the task and have marked it done, the message will remain in your Gmail archive. Just remember that if you delete a message the link to it from tasks will no longer work. 
+
+
+## Multiple Inboxes
+
+Using multiple inboxes allows you to apply a GTD workflow to your Gmail. In addition to your main inbox you can have alternate inboxes, something like:  "Needs Action," "Awaiting Reply," "Scheduled/Reference," and "Delegated." You can name the inboxes as you wish.
+Once these are set up - and you'll need to set aside a little bit of time to do this in a way that fits your needs -, you go through your inbox and use different flags to assign messages to one of the alternate inboxes. Once an inbox message is flagged, you can archive it and its entry no longer appears in your main inbox. You may need to do a browser refresh to have the messages display in their alternate inboxes.
+Once you're done with the message in the alternate inbox, delete it or, if you want to keep it archived, just unflag it.
+For detailed instructions see [https://www.dansilvestre.com/gtd-gmail/](https://www.dansilvestre.com/gtd-gmail/). 
+
+
+
+
+## Negative Searching
+
+As good as Gmail's spam filtering has become, an overwhelming amount of e-mail "noise" still reaches our inboxes. You can define your own filters, but every time you subscribe to a new service, create a new account, or start using a new app you **are** going to get e-mail from new domains. Keeping up with filter creation itself becomes burdensome.  This is where using Gmail's search operators can be especially useful. 
+
+
+Let's say most of the incoming mail - let's say 20 to 50 messages or so for perspective - you need to handle for a project is from two domains, `acme.com` and `w3.org`. To isolate them in your inbox you can use Gmail's [search operators](https://support.google.com/mail/answer/7190?hl=en). Notice the `OR`. Gmail's search boolean operators are case sensitive.
+
+```
+in:inbox from:@acme.com OR from:@w3.org
+```
+
+So far so good. You can now capture this mail using methods like the ones above. *But* this leaves all the potential cruft which will now display again every time you refresh your inbox and eventually send you over quota. Instead you *could* routinely isolate the potential cruft and then either delete it or for some messages, capture it. A [negative search](https://webapps.stackexchange.com/questions/31411/how-to-use-boolean-and-and-not-operators-in-gmail-search) allows you to do this. The hyphens reverse or negate the search: 
+
+
+```
+in:inbox -from:@acme.com AND -from:@w3.org
+```
+
+You can then do a quick review of these results, capturing messages as needed, and batch trashing the rest of the results. You can extend and refine the negative search to help with this.
+Your main inbox will now contain the 50 or so messages for your current project.
+A good follow up search for catching end of day e-mails you might have missed:
+
+
+```
+in:inbox older_than:8hr
+```
+
+
+
+Handle these as needed and then turn your attention to the current messages for your project, which are now in a nice, discrete bundle in your main inbox.
+
+This is just a simple example, easily extendable and customized. 
+
+
+## YMMV
+
+
+I use these methods to clear up my mail at least once a day, oftentimes more. Your mileage may vary. You may have a system that works great for you, may use plugins, and other supplemental software and services to process Gmail. But if you haven't considered these methods, I'd suggest giving them a try, especially if you're hunting and pecking. If you start stressing with them please don't force things. Efficiency should *not* cause added stress.  These methods work for me; they eliminate the hunt and peck searching I'd have to do otherwise and are a sustainable and low-maintenance way of streamlining Gmail and reducing inbox stress. I hope they can be for you as well.
+
+Happier E-mailing!
+

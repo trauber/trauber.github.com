@@ -4,7 +4,13 @@
     <title>Feed title</title>
     
     <entry>
-        <title>Music & Art Reunion</title>
+        <title>Back Up After a While</title>
+        <link href="2019-11-17-back-up-2019.html"/>
+        <content type="html"><p>I really need to keep up with this. I'll be posting some new LaTeX soon. I might also restyle this.</p></content>
+    </entry>
+    
+    <entry>
+        <title>Music and Art Reunion</title>
         <link href="2016-06-12-music-and-art-reunion.html"/>
         <content type="html"><p>I just went to the after-party at Rowhouse. We had a blast, especially once the dancing started. </p>
 <p><img alt="Me, Darius, and Julie" src="images/me-darius-julie-at-reunion40.jpg" /></p>
