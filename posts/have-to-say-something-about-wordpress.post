@@ -1,0 +1,18 @@
+Title: I Have to Something About WordPress
+Slug: have-to-say-something-about-wordpress
+Author: Rich
+Date: 2022-07-05 12:34:40
+
+I have been using WordPress on several sites, [Elderwise Solutions LLC](https://elderwisesolutions.com), [Temple Sinai](https://templesinainj.com) and [Saviana Arts](https://savianaarts.com) and I have mixed experiences.
+
+<!--more-->
+
+Elementor is slow as molasses. Savianaarts has functions that won't work outside of Elementor. And Elementor takes about 30+ seconds to load everytime you call it.
+
+Theme and builder developers can't keep their fingers out of functionality that would better be left to plugins. On Saviana Arts we want to try a parralax theme. On staging I switched from Astra to Twenty Seventeen and hoped that I could dispense with Elementor due to its aforementioned sluggishness. The testimonial carousels won't work in GB. Oh well.
+
+I did find a very nice replacement for Githuber for integrating Markdown in WordPress. [Toolbelt](https://wordpress.org/plugins/wp-toolbelt/) is a plugin with various modules, on of which is a Markdown editor block. I plan on making extensive use of this for TS and Elderwise.
+
+
+
+
